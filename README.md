@@ -31,6 +31,21 @@ source install/setup.zsh
 程序通过 C++ 和 yaml-cpp 自动读取配置，无需传 `--params-file`。
 配置文件绝对路径在 `src/akm_base_node.cpp` 的 `kConfigPath` 中指定。
 
+* Then you can send command to the robot
+
+  ```
+    $ ros2 topic pub /cmd_vel geometry_msgs/msg/Twist "linear:
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    angular:
+    x: 0.0
+    y: 0.0
+    z: 0.0" 
+
+    ros2 topic pub -r 10 /cmd_vel geometry_msgs/msg/Twist \
+    "{linear: {x: 0.5}, angular: {z: 0.2}}"
+    ```
 ## 安全行为
 
 - 线速度和转角按配置上限约束。
