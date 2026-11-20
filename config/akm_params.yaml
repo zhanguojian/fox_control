@@ -2,8 +2,9 @@ akeman:
   ros__parameters:
     port_name: can0
     base_frame: base_link
-    simulated_robot: false
-    control_rate: 50
+    # true：仿真模式，不连接 CAN；false：实车模式，连接 port_name。
+    simulated_robot: true
+    control_rate: 50  
 
     # 车辆几何参数，单位为米或弧度。
     track: 0.52

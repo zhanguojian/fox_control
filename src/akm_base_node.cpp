@@ -15,9 +15,11 @@
 using namespace fox;
 
 namespace {
-// 底盘配置文件由节点入口统一指定，不依赖 CMake 或 ROS Launch。
-constexpr const char *kConfigPath =
-    "/home/leoz/fox/control/config/akm_params.yaml";
+
+    const char* home = std::getenv("HOME");
+    std::string config_path = std::string(home) + "/fox/control/config/akm_params.yaml";
+    const char* kConfigPath = config_path.c_str();
+
 }  // namespace
 
 std::shared_ptr<AkmBaseRos> robot;
