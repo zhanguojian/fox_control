@@ -1,0 +1,15 @@
+akeman:
+  ros__parameters:
+    port_name: can0
+    base_frame: base_link
+    simulated_robot: false
+    control_rate: 50
+
+    # 车辆几何参数，单位为米或弧度。
+    track: 0.52
+    wheelbase: 0.55
+    max_steer_angle: 0.75
+    max_linear_speed: 1.5
+
+    # 超过该时长未收到 cmd_vel 时发送零速命令，单位为秒。
+    command_timeout: 0.5
